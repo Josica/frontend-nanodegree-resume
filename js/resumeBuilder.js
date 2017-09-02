@@ -148,8 +148,36 @@ var work = {
     };
   }
 };
+
+// Projects object
+
+var projects = {
+  projects: [{
+    title: 'Starling City Mapping',
+    dates: '2017',
+    description: 'Using D3.js to make a beautiful web map of Starling City',
+    images: ['https://i.imgur.com/tmR7znG.jpg']
+  }],
+  display: function() {
+    for(var i = 0; i < projects.projects.length; i++){
+      $("#projects").append(HTMLprojectStart);
+
+      var formattedProjectTitle = HTMLprojectTitle.replace("%data%", projects.projects[i].title);
+      var formattedProjectDates = HTMLprojectDates.replace("%data%", projects.projects[i].dates);
+      var formattedProjectDescription = HTMLprojectDescription.replace("%data%", projects.projects[i].description);
+      var formattedProjectImages = HTMLprojectImage.replace("%data%", projects.projects[i].images);
+
+      $(".project-entry:last").append(formattedProjectTitle);
+      $(".project-entry:last").append(formattedProjectDates);
+      $(".project-entry:last").append(formattedProjectDescription);
+      $(".project-entry:last").append(formattedProjectImages);
+
+    };
+  }
+};
 // Function calls
 
 bio.display();
 work.display();
+projects.display();
 education.display();
