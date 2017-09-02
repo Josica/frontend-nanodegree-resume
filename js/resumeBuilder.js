@@ -1,4 +1,4 @@
-// Bio
+// Bio object
 
 var bio = {
   name: 'Felicity Smoak',
@@ -12,5 +12,13 @@ var bio = {
   },
   welcomeMessage: 'I HATE MYSTERIES. THEY BUG ME. THEY NEED TO BE SOLVED.',
   skills: ['C++', 'Ruby', 'Python', 'Perl', 'Javascript'],
-  biopic: 'https://i.imgur.com/GJqlRvw.jpg'
+  biopic: 'https://i.imgur.com/GJqlRvw.jpg',
+  display: function() {
+    var formattedName = HTMLheaderName.replace("%data%", bio.name);
+    $("#header").prepend(formattedName);
+  }
 };
+
+// Function calls
+
+bio.display(); 
