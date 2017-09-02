@@ -39,6 +39,11 @@ var bio = {
     $("#topContacts").append(formattedTwitter);
     $("#topContacts").append(formattedLocation);
     $("#header").append(HTMLskillsStart);
+    $("#footerContacts").append(formattedMobile);
+    $("#footerContacts").append(formattedEmail);
+    $("#footerContacts").append(formattedGithub);
+    $("#footerContacts").append(formattedTwitter);
+    $("#footerContacts").append(formattedLocation);
 
     // loop through skills
 
@@ -50,6 +55,74 @@ var bio = {
   }
 };
 
+// Education object
+
+var education = {
+  schools: [{
+    name: 'Massachusetts Institute of Technology',
+    location: 'Cambridge, Massachusetts, United States',
+    degree: 'Bachelor of Science in Computer Science',
+    majors: ['Computer Science'],
+    dates: '2008'
+  },
+  {
+    name: 'Massachusetts Institute of Technology',
+    location: 'Cambridge, Massachusetts, United States',
+    degree: 'Master\'s Degree in Cyber Security and Computer Sciences',
+    majors: ['Cyber Security', 'Computer Science'],
+    dates: '2009'
+  }],
+  onlineCourses: [{
+    title: 'Self-Driving Car Engineer - Computer Vision',
+    school: 'Udacity',
+    dates: '2017',
+    url: 'https://www.udacity.com/course/sdc-computer-vision--cx32'
+  }],
+  display: function() {
+
+    // loop through schools
+
+    for(var i = 0; i < education.schools.length; i++){
+      $("#education").append(HTMLschoolStart);
+
+      var formattedSchoolName = HTMLschoolName.replace("%data%", education.schools[i].name);
+      var formattedSchoolDegree = HTMLschoolDegree.replace("%data%", education.schools[i].degree);
+      var formattedSchoolDates = HTMLschoolDates.replace("%data%", education.schools[i].dates);
+      var formattedSchoolLocation = HTMLschoolLocation.replace("%data%", education.schools[i].location);
+      var formattedSchoolMajor = HTMLschoolMajor.replace("%data%", education.schools[i].majors);
+
+      $(".education-entry:last").append(formattedSchoolName);
+      $(".education-entry:last").append(formattedSchoolDegree);
+      $(".education-entry:last").append(formattedSchoolDates);
+      $(".education-entry:last").append(formattedSchoolLocation);
+    };
+
+    $("#education").append(HTMLonlineClasses);
+
+    // loop through online courses
+
+    for(var i = 0; i < education.onlineCourses.length; i++){
+      $("#education").append(HTMLschoolStart);
+
+      var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[i].title);
+      var formattedOnlineSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[i].school);
+      var formattedOnlineDates = HTMLonlineDates.replace("%data%", education.onlineCourses[i].dates);
+      var formattedOnlineURL = HTMLonlineURL.replace("%data%", education.onlineCourses[i].url);
+
+      $(".education-entry:last").append(formattedOnlineTitle);
+      $(".education-entry:last").append(formattedOnlineSchool);
+      $(".education-entry:last").append(formattedOnlineDates);
+      $(".education-entry:last").append(formattedOnlineURL);
+    };
+  }
+};
+
+// Work Object
+
+var work = {
+  
+};
 // Function calls
 
 bio.display();
+education.display();
