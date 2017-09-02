@@ -120,9 +120,36 @@ var education = {
 // Work Object
 
 var work = {
-  
+  jobs: [{
+    employer: 'Queen Consolidated',
+    title: 'IT Support',
+    location: 'Starling City',
+    dates: 'Current',
+    description: 'Keeping company\'s computer information systems secure'
+  }],
+  display: function(){
+
+    // loop through work exp
+
+    for(var i = 0; i < work.jobs.length; i++){
+      $("#workExperience").append(HTMLworkStart);
+
+      var formattedWorkEmployer = HTMLworkEmployer.replace("%data%", work.jobs[i].employer);
+      var formattedWorkTitle = HTMLworkTitle.replace("%data%", work.jobs[i].title);
+      var formattedWorkLocation = HTMLworkLocation.replace("%data%", work.jobs[i].location);
+      var formattedWorkDates = HTMLworkDates.replace("%data%", work.jobs[i].dates);
+      var formattedWorkDescription = HTMLworkDescription.replace("%data%", work.jobs[i].description);
+
+      $(".work-entry:last").append(formattedWorkEmployer);
+      $(".work-entry:last").append(formattedWorkTitle);
+      $(".work-entry:last").append(formattedWorkLocation);
+      $(".work-entry:last").append(formattedWorkDates);
+      $(".work-entry:last").append(formattedWorkDescription);
+    };
+  }
 };
 // Function calls
 
 bio.display();
+work.display();
 education.display();
