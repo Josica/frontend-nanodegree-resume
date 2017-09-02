@@ -11,10 +11,12 @@ var bio = {
     location: 'Starling City'
   },
   welcomeMessage: 'I HATE MYSTERIES. THEY BUG ME. THEY NEED TO BE SOLVED.',
-  skills: ['C++', 'Ruby', 'Python', 'Perl', 'Javascript'],
-  biopic: 'https://i.imgur.com/GJqlRvw.jpg',
+  skills: ['C++', 'Ruby', 'Python'],
+  biopic: 'https://i.imgur.com/IQB6Ap3.jpg',
   display: function() {
+
     // variable declarations
+
     var formattedName = HTMLheaderName.replace("%data%", bio.name);
     var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
     var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
@@ -24,7 +26,9 @@ var bio = {
     var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
     var formattedWelcomeMessage = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
     var formattedBioPic = HTMLbioPic.replace("%data%", bio.biopic);
+
     // jquery functions
+
     $("#header").prepend(formattedRole);
     $("#header").prepend(formattedName);
     $("#header").append(formattedBioPic);
@@ -34,6 +38,15 @@ var bio = {
     $("#topContacts").append(formattedGithub);
     $("#topContacts").append(formattedTwitter);
     $("#topContacts").append(formattedLocation);
+    $("#header").append(HTMLskillsStart);
+
+    // loop through skills
+
+    for(var i = 0; i < bio.skills.length; i++){
+      var formattedSkill = HTMLskills.replace("%data%", bio.skills[i]);
+      $("#header").append(formattedSkill);
+    };
+
   }
 };
 
