@@ -50,7 +50,7 @@ var bio = {
         for (var i = 0; i < bio.skills.length; i++) {
             var formattedSkill = HTMLskills.replace("%data%", bio.skills[i]);
             $("#header").append(formattedSkill);
-        };
+        }
 
     }
 };
@@ -96,25 +96,25 @@ var education = {
             $(".education-entry:last").append(formattedSchoolDegree);
             $(".education-entry:last").append(formattedSchoolDates);
             $(".education-entry:last").append(formattedSchoolLocation);
-        };
+        }
 
         $("#education").append(HTMLonlineClasses);
 
         // loop through online courses
 
-        for (var i = 0; i < education.onlineCourses.length; i++) {
+        for (var j = 0; j < education.onlineCourses.length; j++) {
             $("#education").append(HTMLschoolStart);
 
-            var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[i].title);
-            var formattedOnlineSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[i].school);
-            var formattedOnlineDates = HTMLonlineDates.replace("%data%", education.onlineCourses[i].dates);
-            var formattedOnlineURL = HTMLonlineURL.replace("%data%", education.onlineCourses[i].url);
+            var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[j].title);
+            var formattedOnlineSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[j].school);
+            var formattedOnlineDates = HTMLonlineDates.replace("%data%", education.onlineCourses[j].dates);
+            var formattedOnlineURL = HTMLonlineURL.replace("%data%", education.onlineCourses[j].url);
 
             $(".education-entry:last").append(formattedOnlineTitle);
             $(".education-entry:last").append(formattedOnlineSchool);
             $(".education-entry:last").append(formattedOnlineDates);
             $(".education-entry:last").append(formattedOnlineURL);
-        };
+        }
     }
 };
 
@@ -146,7 +146,7 @@ var work = {
             $(".work-entry:last").append(formattedWorkLocation);
             $(".work-entry:last").append(formattedWorkDates);
             $(".work-entry:last").append(formattedWorkDescription);
-        };
+        }
     }
 };
 
@@ -173,7 +173,7 @@ var projects = {
             $(".project-entry:last").append(formattedProjectDescription);
             $(".project-entry:last").append(formattedProjectImages);
 
-        };
+        }
     }
 };
 
